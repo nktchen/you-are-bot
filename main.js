@@ -6,7 +6,6 @@ const port = 8080
 app.get('/', (req, res) => {
     const filePath = path.join(__dirname, 'you-are-bot.zip')
     res.download(filePath, (err) => {
-        res.setHeader('Content-Type', 'application/zip')
         if (err) {
             console.error('Ошибка при отправке файла:', err)
             res.status(500).send('Ошибка при загрузке файла')
